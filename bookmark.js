@@ -1,13 +1,19 @@
-const hAMburger = document.querySelector(".hAMburger-icon");
-const nAVMenu = document.querySelector(".nAV-menu");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-hAMburger.addEventListener("click", () => {
-    nAMMenu.classList.add("active");
-    hAMburger.classList.add("active");
-    // document.body.style.overflow = "hidden";
+hamburger.addEventListener("click", function() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
 })
 
-document.querySelectorAll(".nAV-link").forEach(n => n.addEventListener("click", () => {
-	hAMburger.classList.remove("active");
-	nAVMenu.classList.remove("active");
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
 }))
+
+document.getElementById("change").onclick = changeWhite;
+
+function changeWhite() {
+    document.body.style.color = "white";
+    return false;
+}
